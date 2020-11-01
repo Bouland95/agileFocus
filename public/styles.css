@@ -43,36 +43,46 @@ img {
 
 /* ---------------- Projects ---------------- */
 
-.projectsContainer {
+.section {
   display: flex;
   flex-direction: column;
   /* border: 1px solid black; */
 
   /* can make projects section width adjustable based on max txt length */
-  width: 30%;
+  width: 40%;
   max-width: 40%;
 
   margin-left: 4%;
 }
 
-.project {
+.section h2 {
+  text-decoration: underline;
+}
+
+.ticket {
   margin-bottom: 10px;
   /* border: 1px solid black; */
 }
 
-.projectTitle {
+.ticketName {
   font-weight: bold;
   font-size: 22px;
+
+  /* border: 1px solid black;
+  border-radius: 10px;
+  margin-left: 5px;
+  padding: 2px 20px 2px 20px;
+  width: fit-content; */
 }
 
 /* ---------------- Tasks ---------------- */
 
-.task {
+.minorTicket {
   margin-left: 5%;
   border: 1px solid white;
 }
 
-.completeBtn {
+.pushBtn {
   float: right;
   margin-right: 2%;
   border: 1px solid black;
