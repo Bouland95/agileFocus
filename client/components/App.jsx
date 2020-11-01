@@ -4,7 +4,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        React is working!
+        <div className="view"><div className="viewItem">Tasks</div><div className="viewItem">Graphs</div></div>
       </div>
     );
   }

@@ -1,0 +1,35 @@
+body {
+  font-size: 20px;
+  font-family: "Lucida Console", serif;
+}
+
+.view {
+  display: flex;
+  border: 1px solid black;
+  width: min-content;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+
+.viewItem {
+  flex: 1 1 auto;
+  text-align: center;
+  /* padding:6px; */
+  /* border-right: 1px solid black; */
+  position: relative;
+  text-align: center;
+  padding: 5px 20px;
+
+}
+
+.viewItem + .viewItem {
+  border-left: solid 1px black;
+}
+
+.viewItem:first-child {
+  text-align: left;
+}
+
+.viewItem:first-child {
+  text-align: right;
+}
