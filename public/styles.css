@@ -3,23 +3,30 @@ body {
   font-family: "Lucida Console", serif;
 }
 
+img {
+  float: right;
+}
+
+/* ---------------- View Switcher ---------------- */
+
 .view {
   display: flex;
   border: 1px solid black;
   width: min-content;
   justify-content: space-between;
   border-radius: 4px;
+
+  margin-left: 40%;
+  margin-top: 1%;
+  margin-bottom: 20px;
 }
 
 .viewItem {
   flex: 1 1 auto;
   text-align: center;
-  /* padding:6px; */
-  /* border-right: 1px solid black; */
   position: relative;
   text-align: center;
   padding: 5px 20px;
-
 }
 
 .viewItem + .viewItem {
@@ -32,4 +39,44 @@ body {
 
 .viewItem:first-child {
   text-align: right;
+}
+
+/* ---------------- Projects ---------------- */
+
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+
+  /* can make projects section width adjustable based on max txt length */
+  width: 30%;
+  max-width: 40%;
+
+  margin-left: 4%;
+}
+
+.project {
+  margin-bottom: 10px;
+  /* border: 1px solid black; */
+}
+
+.projectTitle {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* ---------------- Tasks ---------------- */
+
+.task {
+  margin-left: 5%;
+  border: 1px solid white;
+}
+
+.completeBtn {
+  float: right;
+  margin-right: 2%;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 14px;
 }
