@@ -1,7 +1,7 @@
 import React from 'react';
 import Section from './Section.jsx';
 
-import data from './data.js';
+import sections from './data.js';
 
 export class App extends React.Component {
   render() {
@@ -12,7 +12,7 @@ export class App extends React.Component {
           <div className="viewItem">Stats</div>
         </div>
 
-        <Section sectionName={data[0].name} />
+        {sections.map((section, i) => <Section section={section} key={i}/>)}
       </div>
     );
   }
