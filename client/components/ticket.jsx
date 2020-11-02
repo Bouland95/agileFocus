@@ -22,7 +22,7 @@ class Ticket extends React.Component {
     return (
       <div className="ticket">
 
-      <div className="ticketName" onClick={() => this.toggleTicket()}>{this.props.ticket.name}</div>
+      <div className="ticketName btn" onClick={() => this.toggleTicket()}>{this.props.ticket.name}</div>
 
       {this.state.active ? this.props.ticket.subTickets.map((subticket, i) => <Subticket subticket={subticket} sectionName={this.props.sectionName} key={i}/>) : ''}
 

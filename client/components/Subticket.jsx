@@ -5,8 +5,8 @@ const Subticket = ({subticket, sectionName}) => {
   return (
     <div className="subTicket">
       {subticket.name}
-      {(sectionName === 'In-Progress') ? <img src="./play--v1.png" height="20"/> : ''}
-      <span className="pushBtn">Push</span>
+      {(sectionName === 'In-Progress') ? <img className="btn" src="./play--v1.png" height="20"/> : ''}
+      <span className="pushBtn btn">Push</span>
     </div>
   )
 }

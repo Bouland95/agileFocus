@@ -8,6 +8,10 @@ img {
   float: right;
 }
 
+.btn {
+  cursor: pointer;
+}
+
 /* ---------------- View Switcher ---------------- */
 
 .view {
@@ -111,4 +115,56 @@ img {
   border-radius: 4px;
   padding: 0 10px;
   font-size: 14px;
+}
+
+/* ---------------- Pomodoro ---------------- */
+.pomodoroContainer {
+  position: fixed;
+  right: 15%;
+  top: 10%;
+}
+
+.pomodoroContainer h2 {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 35px;
+}
+
+.pomodoroCircle {
+  width: 230px;
+  height: 230px;
+  line-height: 230px;
+  border-radius: 50%;
+  font-size: 28px;
+  letter-spacing: 3px;
+  background-color: #596DA8;
+  text-align: center;
+  color: white;
+}
+
+.pomodoroOutline {
+  width: 233px;
+  height: 233px;
+  line-height: 233px;
+  border-radius: 50%;
+  background-color: rgb(84, 84, 84);
+  z-index: -1;
+}
+
+.adjustTimer {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 15px;
+  text-align: center;
+  letter-spacing: 15px;
+  font-size: 34px;
+}
+
+.minus {
+  display: inline-block;
+  width: 15px;
+}
+
+.plus {
+  display: inline-block;
+  width: 24px;
 }
