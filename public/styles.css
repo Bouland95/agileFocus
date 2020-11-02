@@ -16,7 +16,7 @@ img {
   justify-content: space-between;
   border-radius: 4px;
 
-  margin-left: 40%;
+  margin-left: 42%;
   margin-top: 1%;
   margin-bottom: 20px;
 }
@@ -49,8 +49,8 @@ img {
   /* border: 1px solid black; */
 
   /* can make projects section width adjustable based on max txt length */
-  width: 40%;
-  max-width: 40%;
+  width: 45%;
+  max-width: 45%;
 
   margin-left: 4%;
 }
@@ -65,14 +65,14 @@ img {
 }
 
 .ticketName {
-  font-weight: bold;
-  font-size: 22px;
+  font-weight: bolder;
+  font-size: 24px;
 
-  /* border: 1px solid black;
-  border-radius: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
   margin-left: 5px;
   padding: 2px 20px 2px 20px;
-  width: fit-content; */
+  width: fit-content;
 }
 
 /* ---------------- Tasks ---------------- */
@@ -80,6 +80,7 @@ img {
 .subTicket {
   margin-left: 5%;
   border: 1px solid white;
+  color: rgb(91, 91, 91);
 }
 
 .pushBtn {

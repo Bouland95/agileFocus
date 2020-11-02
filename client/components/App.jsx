@@ -4,6 +4,12 @@ import Section from './Section.jsx';
 import sections from './data.js';
 
 export class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sections: sections
+    }
+  }
   render() {
     return (
       <div>
@@ -12,7 +18,7 @@ export class App extends React.Component {
           <div className="viewItem">Stats</div>
         </div>
 
-        {sections.map((section, i) => <Section section={section} key={i}/>)}
+        {this.state.sections.map((section, i) => <Section section={section} key={i}/>)}
       </div>
     );
   }

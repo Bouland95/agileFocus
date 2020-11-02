@@ -7,9 +7,9 @@ const Section = ({section}) => {
   return (
     <div className="section">
 
-        <h2>{section.name}</h2>
+      <h2>{section.name}</h2>
 
-        {section.tickets.map((ticket, i) => <Ticket ticket={ticket} key={i}/>)}
+      {section.tickets.map((ticket, i) => <Ticket ticket={ticket} sectionName={section.name} key={i}/>)}
 
     </div>
   )
