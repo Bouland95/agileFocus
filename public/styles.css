@@ -1,6 +1,7 @@
 body {
   font-size: 20px;
   font-family: "Lucida Console", serif;
+  /* background-color: #92B879; */
 }
 
 img {
@@ -41,18 +42,35 @@ img {
   text-align: right;
 }
 
-/* ---------------- Projects ---------------- */
+/* ---------------- Sections ----------------*/
 
 .section {
   display: flex;
   flex-direction: column;
   /* border: 1px solid black; */
 
-  /* can make projects section width adjustable based on max txt length */
+  /* can make sections width adjustable based on max txt length */
   width: 45%;
   max-width: 45%;
 
   margin-left: 4%;
+}
+
+/* ---------------- Tickets ----------------*/
+
+.section .ticketName {
+  /* background-color: #F5CC76; */
+  background-color: #60A8A0;
+}
+
+.section:first-of-type .ticketName {
+  /* background-color: #A5BAFA; */
+  background-color: #F53030;
+}
+
+.section:last-of-type .ticketName {
+  /* background-color: #9BF59F; */
+  background-color: #7BF52A;
 }
 
 .section h2 {
@@ -75,7 +93,7 @@ img {
   width: fit-content;
 }
 
-/* ---------------- Tasks ---------------- */
+/* ---------------- Sub Tickets ---------------- */
 
 .subTicket {
   margin-left: 5%;

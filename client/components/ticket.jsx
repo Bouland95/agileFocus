@@ -3,16 +3,32 @@ import ReactDOM from 'react-dom';
 
 import Subticket from './Subticket.jsx';
 
-const Ticket = ({ticket, sectionName}) => {
-  return (
-    <div className="ticket">
+class Ticket extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      active: false
+    }
+  }
 
-      <div className="ticketName">{ticket.name}</div>
+  toggleTicket() {
+    var inverse = !this.state.active;
+    this.setState({
+      active: inverse
+    })
+  }
 
-      {ticket.active ? ticket.subTickets.map((subticket, i) => <Subticket subticket={subticket} sectionName={sectionName} key={i}/>) : ''}
+  render() {
+    return (
+      <div className="ticket">
+
+      <div className="ticketName" onClick={() => this.toggleTicket()}>{this.props.ticket.name}</div>
+
+      {this.state.active ? this.props.ticket.subTickets.map((subticket, i) => <Subticket subticket={subticket} sectionName={this.props.sectionName} key={i}/>) : ''}
 
     </div>
-  )
+    )
+  }
 }
 
 export default Ticket

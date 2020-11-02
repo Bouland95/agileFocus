@@ -6,19 +6,18 @@ import sections from './data.js';
 export class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      sections: sections
-    }
   }
   render() {
     return (
       <div>
         <div className="view">
-          <div className="viewItem">Tasks</div>
-          <div className="viewItem">Stats</div>
+          <div className="viewItem">Tickets</div>
+          <div className="viewItem">Statistics</div>
         </div>
 
-        {this.state.sections.map((section, i) => <Section section={section} key={i}/>)}
+        <div className="sectionsContainer">
+          {sections.map((section, i) => <Section section={section} key={i}/>)}
+        </div>
       </div>
     );
   }
