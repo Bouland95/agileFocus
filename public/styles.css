@@ -59,18 +59,18 @@ img {
 /* ---------------- Tickets ----------------*/
 
 .section .ticketName {
-  /* background-color: #F5CC76; */
-  background-color: #60A8A0;
+  background-color: #F5CC76;
+  /* background-color: #60A8A0; */
 }
 
 .section:first-of-type .ticketName {
-  /* background-color: #A5BAFA; */
-  background-color: #F53030;
+  background-color: #A5BAFA;
+  /* background-color: #F53030; */
 }
 
 .section:last-of-type .ticketName {
-  /* background-color: #9BF59F; */
-  background-color: #7BF52A;
+  background-color: #9BF59F;
+  /* background-color: #7BF52A; */
 }
 
 .section h2 {
@@ -83,14 +83,15 @@ img {
 }
 
 .ticketName {
-  font-weight: bolder;
+  /* font-weight: bolder; */
   font-size: 24px;
 
   border: 1px solid black;
   border-radius: 4px;
-  margin-left: 5px;
   padding: 2px 20px 2px 20px;
   width: fit-content;
+  margin-left: 5px;
+  margin-bottom: 5px;
 }
 
 /* ---------------- Sub Tickets ---------------- */
@@ -99,6 +100,8 @@ img {
   margin-left: 5%;
   border: 1px solid white;
   color: rgb(91, 91, 91);
+  border-bottom: 1px solid rgb(186, 186, 186);
+  padding-top: 4px;
 }
 
 .pushBtn {
