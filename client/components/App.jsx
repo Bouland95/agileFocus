@@ -1,6 +1,8 @@
 import React from 'react';
 import Section from './Section.jsx';
 
+import data from './data.js';
+
 export class App extends React.Component {
   render() {
     return (
@@ -10,7 +12,7 @@ export class App extends React.Component {
           <div className="viewItem">Stats</div>
         </div>
 
-        <Section />
+        <Section sectionName={data[0].name} />
       </div>
     );
   }

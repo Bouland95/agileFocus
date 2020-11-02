@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export const Section = () => {
+const Section = ({sectionName}) => {
   return (
     <div className="section">
-        <h2>BACKLOG</h2>
+        <h2>{sectionName}</h2>
+
         <div className="ticket">
 
           <div className="ticketName">Implement a new user interface</div>
@@ -31,3 +32,5 @@ export const Section = () => {
     </div>
   )
 }
+
+export default Section
