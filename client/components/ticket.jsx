@@ -20,9 +20,9 @@ class Ticket extends React.Component {
 
   render() {
     return (
-      <div className="ticket">
+    <div className="ticket">
 
-      <div className="ticketName btn" onClick={() => this.toggleTicket()}>{this.props.ticket.name}</div>
+      {this.props.ticket.subTickets.length === 0 ? '' : <div className="ticketName btn" onClick={() => this.toggleTicket()}>{this.props.ticket.name}</div>}
 
       {this.state.active ? this.props.ticket.subTickets.map((subticket, i) =>
       <Subticket ticketId={this.props.ticketId} subticket={subticket} sectionName={this.props.sectionName} pushTicket={this.props.pushTicket} key={i}/>) : ''}

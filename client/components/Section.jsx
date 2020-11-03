@@ -8,8 +8,9 @@ const Section = ({sectionName, sectionTickets, pushTicket}) => {
     <div className="section">
 
       <h2>{sectionName}</h2>
-      {Object.keys(sectionTickets).map((id, i) => <Ticket ticketId={id} ticket={sectionTickets[id]} sectionName={sectionName} pushTicket={pushTicket} key={i}/>)}
-      {/* {sectionTickets.map((ticket, i) => <Ticket ticket={ticket} sectionName={sectionName} pushTicket={pushTicket} key={i}/>)} */}
+      {Object.keys(sectionTickets).length === 0
+      ? <div className=" empty">Empty</div>
+      : Object.keys(sectionTickets).map((id, i) => <Ticket ticketId={id} ticket={sectionTickets[id]} sectionName={sectionName} pushTicket={pushTicket} key={i}/>)}
 
     </div>
   )

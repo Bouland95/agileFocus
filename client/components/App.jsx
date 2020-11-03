@@ -15,7 +15,6 @@ export class App extends React.Component {
   }
 
   pushTicket(sectionName, ticketId, pushedSubticket) {
-    // debugger;
     var currentSectionIndex = sectionsNames.indexOf(sectionName);
 
     var sections = this.state.sections;
@@ -27,13 +26,16 @@ export class App extends React.Component {
     for (var i = 0; i < subtickets.length; i++) {
       var subticket = subtickets[i];
       if (subticket.name === pushedSubticket.name) {
-        subtickets.splice(i,1);
+        subtickets.splice(i, 1);
+      }
+      if (subtickets.length === 0) {
+        // debugger;
+        delete currentSectionTickets[ticketId]
       }
     }
 
     // if a next session exists
     if (sectionsNames[currentSectionIndex + 1] !== undefined) {
-      // debugger;
       var nextSection = sections[sectionsNames[currentSectionIndex + 1]];
 
       // if the ticket does not exist, create it
