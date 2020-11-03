@@ -8,8 +8,8 @@ const Section = ({sectionName, sectionTickets, pushTicket}) => {
     <div className="section">
 
       <h2>{sectionName}</h2>
-
-      {sectionTickets.map((ticket, i) => <Ticket ticket={ticket} sectionName={sectionName} pushTicket={pushTicket} key={i}/>)}
+      {Object.keys(sectionTickets).map((id, i) => <Ticket ticketId={id} ticket={sectionTickets[id]} sectionName={sectionName} pushTicket={pushTicket} key={i}/>)}
+      {/* {sectionTickets.map((ticket, i) => <Ticket ticket={ticket} sectionName={sectionName} pushTicket={pushTicket} key={i}/>)} */}
 
     </div>
   )

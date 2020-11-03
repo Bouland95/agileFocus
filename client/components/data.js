@@ -1,8 +1,7 @@
 export default
 {
-  Backlog : [
-    {
-      id: 1,
+  Backlog : {
+    '1' : {
       name: "Add Tickets functionality",
       subTickets: [
         { name: "Make a single ticket expandable, the rest collapsed" },
@@ -11,8 +10,7 @@ export default
         { name: "Allow creation of new tickets"}
       ]
     },
-    {
-      id: 2,
+    '2' : {
       name: "Implement a pomodoro timer",
       subTickets: [
         { name: "Add the outline and static components" },
@@ -21,11 +19,8 @@ export default
         { name: "Limit pomodoro timer button to 'In-Progress' section"}
       ]
     }
-  ],
-
-  'In-Progress' : [
-    {
-      id: 1,
+  }, 'In-Progress' : {
+    '1' : {
       name: "Add Tickets functionality",
       subTickets: [
         { name: "Add a new ticket or sub-ticket" },
@@ -33,8 +28,7 @@ export default
         { name: "Allow creation of new tickets"}
       ]
     },
-    {
-      id: 2,
+    '2' : {
       name: "Implement a pomodoro timer",
       subTickets: [
         { name: "Add the outline and static components" },
@@ -43,11 +37,9 @@ export default
         { name: "Limit pomodoro timer button to 'In-Progress' section"}
       ]
     }
-  ],
-
-  Complete : [
-    {
-      id: 1,
+  },
+Complete : {
+    '1' : {
       name: "Add Tickets functionality",
       subTickets: [
         { name: "Add a new ticket or sub-ticket" },
@@ -55,5 +47,5 @@ export default
         { name: "Allow creation of new tickets"}
       ]
     }
-  ]
+  }
 }

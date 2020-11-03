@@ -14,20 +14,43 @@ export class App extends React.Component {
     }
   }
 
-  pushTicket(sectionName, subticket) {
+  pushTicket(sectionName, ticketId, pushedSubticket) {
     // debugger;
-    var sections = this.state.sections;
+    var currentSectionIndex = sectionsNames.indexOf(sectionName);
 
-    for (var i = 0; i < sections.length; i++) {
-      if (sections[i].name === sectionName) {
-        // debugger;
-        var pushedTicket = sections[i]
-        var sectionsState = this.state.sections;
-        debugger;
-        delete sectionsState[i][subticket]
+    var sections = this.state.sections;
+    var currentSectionTickets = sections[sectionName];
+    var ticket = currentSectionTickets[ticketId];
+    var subtickets = ticket.subTickets;
+
+    // removes the ticket from the current section
+    for (var i = 0; i < subtickets.length; i++) {
+      var subticket = subtickets[i];
+      if (subticket.name === pushedSubticket.name) {
+        subtickets.splice(i,1);
       }
     }
+
+    // if a next session exists
+    if (sectionsNames[currentSectionIndex + 1] !== undefined) {
+      // debugger;
+      var nextSection = sections[sectionsNames[currentSectionIndex + 1]];
+
+      // if the ticket does not exist, create it
+      if (nextSection[ticketId] === undefined) {
+        nextSection[ticketId] = {
+          name: ticket.name,
+          subTickets: []
+        }
+      }
+      nextSection[ticketId].subTickets.push(pushedSubticket);
+    }
+
+    this.setState({
+      sections: sections
+    })
   }
+
 
   render() {
     return (
