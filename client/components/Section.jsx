@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 
 import Ticket from './Ticket.jsx';
 
-const Section = ({section}) => {
+const Section = ({sectionName, sectionTickets, pushTicket}) => {
   return (
     <div className="section">
 
-      <h2>{section.name}</h2>
+      <h2>{sectionName}</h2>
 
-      {section.tickets.map((ticket, i) => <Ticket ticket={ticket} sectionName={section.name} key={i}/>)}
+      {sectionTickets.map((ticket, i) => <Ticket ticket={ticket} sectionName={sectionName} pushTicket={pushTicket} key={i}/>)}
 
     </div>
   )
