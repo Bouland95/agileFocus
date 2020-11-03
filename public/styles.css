@@ -4,10 +4,6 @@ body {
   /* background-color: #92B879; */
 }
 
-img {
-  float: right;
-}
-
 .btn {
   cursor: pointer;
 }
@@ -117,7 +113,21 @@ img {
   font-size: 14px;
 }
 
+.subTicket img {
+  float: right;
+}
+
 /* ---------------- Pomodoro ---------------- */
+.pomodoroBox {
+  position: fixed;
+  right: 10%;
+  top: 10%;
+  width: 400px;
+  height: 500px;
+  border: 1px solid black;
+  border-radius: 25px;
+}
+
 .pomodoroContainer {
   position: fixed;
   right: 15%;
@@ -167,4 +177,22 @@ img {
 .plus {
   display: inline-block;
   width: 24px;
+}
+
+.activeSubTicket {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.activeSubTicketText {
+  color: rgb(50, 49, 49);
+  border-bottom: 1px solid rgba(116, 116, 116, 0.44);
+  font-style: italic;
+  font-size: 21px;
+}
+
+.activeTicketHeader {
+  margin-top: 30px;
+  font-weight: bold;
+  text-align: center;
 }
