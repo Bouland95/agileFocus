@@ -10,7 +10,10 @@ export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sections: sections
+      sections: sections,
+      activeTicket: 'Select an "In-Progress" ticket',
+      activeTimer: false,
+      time: 1800
     }
   }
 
@@ -52,6 +55,47 @@ export class App extends React.Component {
     })
   }
 
+  setTrackedTicket(subticket) {
+    if (!this.state.activeTimer) {
+      this.toggleTime();
+    }
+    this.setState({
+      activeTicket: subticket.name
+    })
+  }
+
+  toggleTime() {
+    if (!this.state.activeTimer) {
+      clearInterval(this.timer);
+      this.timer = setInterval(() => {
+        var newTime = this.state.time - 1;
+
+        this.setState({
+          time: newTime,
+          activeTimer: true
+        })
+      }, 1000)
+    } else {
+      clearInterval(this.timer);
+      this.setState({
+        activeTimer: false
+      })
+    }
+  }
+
+  plusTime() {
+    var newTime = this.state.time + 60;
+    this.setState({
+      time: newTime
+    })
+  }
+
+  minusTime() {
+    var newTime = this.state.time - 60;
+    this.setState({
+      time: newTime
+    })
+  }
 
   render() {
     return (
@@ -63,11 +107,15 @@ export class App extends React.Component {
 
         <div className="sectionsContainer">
           {Object.keys(this.state.sections).map((section, i) => <Section sectionName={section}
-          sectionTickets={this.state.sections[section]} pushTicket={this.pushTicket.bind(this)} key={i}/>)}
+          sectionTickets={this.state.sections[section]} pushTicket={this.pushTicket.bind(this)}
+          setTrackedTicket={this.setTrackedTicket.bind(this)} key={i}/>)}
         </div>
 
         <div className="pomodoroBox">
-          <Pomodoro />
+          <Pomodoro activeTicket={this.state.activeTicket} toggleTime={this.toggleTime.bind(this)}
+          active={this.state.activeTimer} time={this.state.time} plusTime={this.plusTime.bind(this)}
+          minusTime={this.minusTime.bind(this)}
+          />
         </div>
       </div>
     );

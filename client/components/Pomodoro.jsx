@@ -4,45 +4,7 @@ import ReactDOM from 'react-dom';
 class Pomodoro extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      active: false,
-      time: 1800
-    }
   }
-
-  toggleTime() {
-    if (!this.state.active) {
-      clearInterval(this.timer);
-      this.timer = setInterval(() => {
-        var newTime = this.state.time - 1;
-
-        this.setState({
-          time: newTime,
-          active: true
-        })
-      }, 1000)
-    } else {
-      clearInterval(this.timer);
-      this.setState({
-        active: false
-      })
-    }
-  }
-
-  plusTime() {
-    var newTime = this.state.time + 60;
-    this.setState({
-      time: newTime
-    })
-  }
-
-  minusTime() {
-    var newTime = this.state.time - 60;
-    this.setState({
-      time: newTime
-    })
-  }
-
 
   timeFormatter(timeInSeconds) {
     var seconds = timeInSeconds % 60;
@@ -58,23 +20,24 @@ class Pomodoro extends React.Component {
     return `${formattedMinutes}:${formattedSeconds}`
   }
 
+  // renders pause/stop or resume/stop and (-, + for timer if paused)
   renderSettings() {
-    if (this.state.active) {
+    if (this.props.active) {
       return (
       <div className="emptyAdjusterDiv">
         <div className="pomodoroSettings">
-          <img className="btn" src="./stop.png" height="40"/> <img className="btn" src="./pause.png" height="40" onClick={() => this.toggleTime()}/>
+          <img className="btn" src="./stop.png" height="40"/> <img className="btn" src="./pause.png" height="40" onClick={() => this.props.toggleTime()}/>
         </div>
       </div>)
     } else {
       return (
         <div className="emptyAdjusterDiv">
       <div className="pomodoroSettings normalCursor">
-        <div className="minus btn" onClick={() => this.minusTime()}>-</div>
+        <div className="minus btn" onClick={() => this.props.minusTime()}>-</div>
 
-          <img className="btn" src="./stop.png" height="40"/> <img className="btn" src="./play.png" height="40" onClick={() => this.toggleTime()}/>
+          <img className="btn" src="./stop.png" height="40"/> <img className="btn" src="./play.png" height="40" onClick={() => this.props.toggleTime()}/>
 
-        <div className="plus btn" onClick={() => this.plusTime()}>+</div>
+        <div className="plus btn" onClick={() => this.props.plusTime()}>+</div>
         </div>
       </div>)
     }
@@ -85,12 +48,12 @@ class Pomodoro extends React.Component {
       <div className="pomodoroContainer">
         <h2>Timelog</h2>
         <div className="pomodoroOutline">
-          <div className="pomodoroCircle btn">{this.timeFormatter(this.state.time)}</div>
+          <div className="pomodoroCircle btn">{this.timeFormatter(this.props.time)}</div>
         </div>
         {this.renderSettings()}
         <div className="activeTicketHeader">Active Ticket</div>
           <div className="activeSubTicket">
-            <span className="activeSubTicketText">Add a new ticket or sub-ticket</span>
+    <span className="activeSubTicketText">{this.props.activeTicket}</span>
           </div>
       </div>
     )

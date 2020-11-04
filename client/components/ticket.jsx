@@ -22,10 +22,18 @@ class Ticket extends React.Component {
     return (
     <div className="ticket">
 
-      {this.props.ticket.subTickets.length === 0 ? '' : <div className="ticketName btn" onClick={() => this.toggleTicket()}>{this.props.ticket.name}</div>}
+      {this.props.ticket.subTickets.length === 0
+      ? ''
+      : <div className="ticketName btn" onClick={() => this.toggleTicket()}>{this.props.ticket.name}</div>}
 
-      {this.state.active ? this.props.ticket.subTickets.map((subticket, i) =>
-      <Subticket ticketId={this.props.ticketId} subticket={subticket} sectionName={this.props.sectionName} pushTicket={this.props.pushTicket} key={i}/>) : ''}
+      {this.state.active
+
+      ? this.props.ticket.subTickets.map((subticket, i) =>
+      <Subticket ticketId={this.props.ticketId} subticket={subticket}
+      sectionName={this.props.sectionName} pushTicket={this.props.pushTicket}
+      setTrackedTicket={this.props.setTrackedTicket} key={i}/>)
+
+      : ''}
 
     </div>
     )

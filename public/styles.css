@@ -66,12 +66,12 @@ h2 {
 
 /* ---------------- Tickets ----------------*/
 
-.section .ticketName {
+/* .section .ticketName {
   background-color: #F5CC76;
-  /* background-color: #60A8A0; */
-}
+  background-color: #60A8A0;
+} */
 
-.section:first-of-type .ticketName {
+.section .ticketName {
   background-color: #A5BAFA;
   /* background-color: #F53030; */
 }
@@ -129,6 +129,7 @@ h2 {
   border-radius: 4px;
   padding: 0 10px;
   font-size: 14px;
+  font-family: Arial;
 }
 
 .subTicket img {
@@ -136,15 +137,15 @@ h2 {
 }
 
 /* ---------------- Pomodoro ---------------- */
-.pomodoroBox {
+/* .pomodoroBox {
   position: fixed;
   right: 10%;
   top: 10%;
   width: 400px;
-  height: 500px;
+  height: fit-content;
   border: 1px solid black;
   border-radius: 25px;
-}
+} */
 
 .pomodoroContainer {
   position: fixed;
@@ -204,6 +205,8 @@ h2 {
 .activeSubTicket {
   margin-top: 5px;
   text-align: center;
+  width: 250px;
+  height:fit-content;
 }
 
 .activeSubTicketText {
