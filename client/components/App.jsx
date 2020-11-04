@@ -29,7 +29,6 @@ export class App extends React.Component {
         subtickets.splice(i, 1);
       }
       if (subtickets.length === 0) {
-        // debugger;
         delete currentSectionTickets[ticketId]
       }
     }
