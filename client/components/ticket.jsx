@@ -22,9 +22,11 @@ class Ticket extends React.Component {
     return (
     <div className="ticket">
 
-      {this.props.ticket.subTickets.length === 0
+      {/* Uncomment to remove empty tickets */}
+      {/* {this.props.ticket.subTickets.length === 0
       ? ''
-      : <div className="ticketName btn" onClick={() => this.toggleTicket()}>{this.props.ticket.name}</div>}
+      :  */}
+      {<div className="ticketName btn" onClick={() => this.toggleTicket()}>{this.props.ticket.name}</div>}
 
       {this.state.active
 

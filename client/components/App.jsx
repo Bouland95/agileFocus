@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import Section from './Section.jsx';
 
 import sections from './data.js';
@@ -13,8 +14,30 @@ export class App extends React.Component {
       sections: sections,
       activeTicket: 'Select an "In-Progress" ticket',
       activeTimer: false,
-      time: 1800
+      time: 1800,
+      newTicket: ''
     }
+  }
+
+  handleNewTicketChange(event) {
+    this.setState({
+      newTicket: event.target.value
+    })
+  }
+
+  handleNewTicketSubmit(event) {
+    event.preventDefault();
+    const { newTicket, sections } = this.state;
+    // var newId = _.Uniq
+    sections.Backlog[_.uniqueId()] = {
+      name: newTicket,
+      subTickets: []
+    }
+    debugger;
+    this.setState({
+      sections: sections,
+      newTicket: ''
+    })
   }
 
   pushTicket(sectionName, ticketId, pushedSubticket) {
@@ -106,9 +129,11 @@ export class App extends React.Component {
         </div>
 
         <div className="sectionsContainer">
-          {Object.keys(this.state.sections).map((section, i) => <Section sectionName={section}
-          sectionTickets={this.state.sections[section]} pushTicket={this.pushTicket.bind(this)}
-          setTrackedTicket={this.setTrackedTicket.bind(this)} key={i}/>)}
+          {Object.keys(this.state.sections).map((section, i) =>
+          <Section sectionName={section} sectionTickets={this.state.sections[section]}
+          pushTicket={this.pushTicket.bind(this)} setTrackedTicket={this.setTrackedTicket.bind(this)}
+          newTicket={this.state.newTicket} handleNewTicketChange={this.handleNewTicketChange.bind(this)}
+          handleNewTicketSubmit={this.handleNewTicketSubmit.bind(this)} key={i}/>)}
         </div>
 
         <div className="pomodoroBox">
