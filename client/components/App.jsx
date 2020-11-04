@@ -11,12 +11,19 @@ export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      view: 'Tickets',
       sections: sections,
       activeTicket: 'Select an "In-Progress" ticket',
       activeTimer: false,
       time: 1800,
       newTicket: ''
     }
+  }
+
+  handleViewChange(e) {
+    this.setState({
+      view: e.target.innerText
+    })
   }
 
   handleNewTicketChange(event) {
@@ -119,28 +126,40 @@ export class App extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <div className="view">
-          <div className="viewItem btn">Tickets</div>
-          <div className="viewItem btn">Statistics</div>
-        </div>
+    if (this.state.view === 'Tickets') {
+      return (
+        <div>
+          <div className="view" onClick={this.handleViewChange.bind(this)}>
+            <div className="viewItem btn">Tickets</div>
+            <div className="viewItem btn">Statistics</div>
+          </div>
 
-        <div className="sectionsContainer">
-          {Object.keys(this.state.sections).map((section, i) =>
-          <Section sectionName={section} sectionTickets={this.state.sections[section]}
-          pushTicket={this.pushTicket.bind(this)} setTrackedTicket={this.setTrackedTicket.bind(this)}
-          newTicket={this.state.newTicket} handleNewTicketChange={this.handleNewTicketChange.bind(this)}
-          handleNewTicketSubmit={this.handleNewTicketSubmit.bind(this)} key={i}/>)}
-        </div>
+          <div className="sectionsContainer">
+            {Object.keys(this.state.sections).map((section, i) =>
+            <Section sectionName={section} sectionTickets={this.state.sections[section]}
+            pushTicket={this.pushTicket.bind(this)} setTrackedTicket={this.setTrackedTicket.bind(this)}
+            newTicket={this.state.newTicket} handleNewTicketChange={this.handleNewTicketChange.bind(this)}
+            handleNewTicketSubmit={this.handleNewTicketSubmit.bind(this)} key={i}/>)}
+          </div>
 
-        <div className="pomodoroBox">
-          <Pomodoro activeTicket={this.state.activeTicket} toggleTime={this.toggleTime.bind(this)}
-          active={this.state.activeTimer} time={this.state.time} plusTime={this.plusTime.bind(this)}
-          minusTime={this.minusTime.bind(this)}
-          />
+          <div className="pomodoroBox">
+            <Pomodoro activeTicket={this.state.activeTicket} toggleTime={this.toggleTime.bind(this)}
+            active={this.state.activeTimer} time={this.state.time} plusTime={this.plusTime.bind(this)}
+            minusTime={this.minusTime.bind(this)}
+            />
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
+    else {
+      return (
+        <div>
+          <div className="view" onClick={this.handleViewChange.bind(this)}>
+              <div className="viewItem btn">Tickets</div>
+              <div className="viewItem btn">Statistics</div>
+          </div>
+        </div>
+      )
+    }
   }
 }
