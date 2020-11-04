@@ -48,7 +48,7 @@ class Pomodoro extends React.Component {
       <div className="pomodoroContainer">
         <h2>Timelog</h2>
         <div className="pomodoroOutline">
-          <div className="pomodoroCircle btn">{this.timeFormatter(this.props.time)}</div>
+          <div className="pomodoroCircle normalCursor">{this.timeFormatter(this.props.time)}</div>
         </div>
         {this.renderSettings()}
         <div className="activeTicketHeader">Active Ticket</div>

@@ -26,7 +26,7 @@ class Ticket extends React.Component {
       {/* {this.props.ticket.subTickets.length === 0
       ? ''
       :  */}
-      {<div className="ticketName btn" onClick={() => this.toggleTicket()}>{this.props.ticket.name}</div>}
+      <div className="ticketName btn" onClick={() => this.toggleTicket()}>{this.props.ticket.name}</div>
 
       {this.state.active
 

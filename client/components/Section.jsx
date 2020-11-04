@@ -30,12 +30,12 @@ class Section extends React.Component {
         </div>
 
         {/* Uncomment to remove empty tickets */}
-        {/* {Object.keys(sectionTickets).length === 0
+        {Object.keys(sectionTickets).length === 0
 
         ? <div className=" empty">Empty</div>
 
-        :  */}
-        {Object.keys(sectionTickets).map((id, i) =>
+        :
+        Object.keys(sectionTickets).map((id, i) =>
         <Ticket ticketId={id} ticket={sectionTickets[id]} sectionName={sectionName}
         pushTicket={pushTicket} setTrackedTicket={setTrackedTicket} key={i}/>)}
 
