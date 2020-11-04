@@ -7,7 +7,11 @@ const Section = ({sectionName, sectionTickets, pushTicket, setTrackedTicket}) =>
   return (
     <div className="section">
 
-      <h2>{sectionName}</h2>
+      <div className="sectionHeader">
+        <h2>{sectionName}</h2>
+        {sectionName === 'Backlog' ? <input className="newTicket" placeholder={"Enter a new ticket..."}/> : ''}
+      </div>
+
       {Object.keys(sectionTickets).length === 0
 
       ? <div className=" empty">Empty</div>

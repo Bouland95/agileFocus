@@ -6,7 +6,6 @@ body {
 
 h2 {
   color: rgb(50, 50, 53);
-
 }
 
 .btn {
@@ -62,6 +61,26 @@ h2 {
   max-width: 45%;
 
   margin-left: 4%;
+}
+
+.sectionHeader {
+  display: inline-block;
+  position: relative;
+}
+
+.sectionHeader h2 {
+  display: inline-block;
+}
+
+.sectionHeader .newTicket {
+  margin-left: 12px;
+  width: 250px;
+  height:25px;
+  border-radius: 4px;
+  border: 1px solid black;
+  position: absolute;
+  top: 30px;
+  padding-left: 15px;
 }
 
 /* ---------------- Tickets ----------------*/
