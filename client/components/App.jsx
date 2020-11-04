@@ -112,6 +112,17 @@ export class App extends React.Component {
     }
   }
 
+  stopTime() {
+    if (this.state.activeTimer) {
+      this.toggleTime();
+    }
+
+    this.setState({
+      activeTicket: 'Select an "In-Progress" ticket',
+      time: 1800
+    })
+  }
+
   plusTime() {
     var newTime = this.state.time + 60;
     this.setState({
@@ -146,7 +157,7 @@ export class App extends React.Component {
           <div className="pomodoroBox">
             <Pomodoro activeTicket={this.state.activeTicket} toggleTime={this.toggleTime.bind(this)}
             active={this.state.activeTimer} time={this.state.time} plusTime={this.plusTime.bind(this)}
-            minusTime={this.minusTime.bind(this)}
+            minusTime={this.minusTime.bind(this)} stopTime={this.stopTime.bind(this)}
             />
           </div>
         </div>

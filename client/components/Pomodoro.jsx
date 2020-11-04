@@ -21,39 +21,42 @@ class Pomodoro extends React.Component {
   }
 
   // renders pause/stop or resume/stop and (-, + for timer if paused)
-  renderSettings() {
-    if (this.props.active) {
+  renderSettings(active, toggleTime, plusTime, minusTime, stopTime) {
+    if (active) {
       return (
       <div className="emptyAdjusterDiv">
         <div className="pomodoroSettings">
-          <img className="btn" src="./stop.png" height="40"/> <img className="btn" src="./pause.png" height="40" onClick={() => this.props.toggleTime()}/>
+          <img className="btn" src="./stop.png" height="40" onClick={() => stopTime()}/> <img className="btn" src="./pause.png" height="40" onClick={() => toggleTime()}/>
         </div>
       </div>)
     } else {
       return (
         <div className="emptyAdjusterDiv">
       <div className="pomodoroSettings normalCursor">
-        <div className="minus btn" onClick={() => this.props.minusTime()}>-</div>
+        <div className="minus btn" onClick={() => minusTime()}>-</div>
 
-          <img className="btn" src="./stop.png" height="40"/> <img className="btn" src="./play.png" height="40" onClick={() => this.props.toggleTime()}/>
+          <img className="btn" src="./stop.png" height="40" onClick={() => stopTime()}/> <img className="btn" src="./play.png" height="40" onClick={() => toggleTime()}/>
 
-        <div className="plus btn" onClick={() => this.props.plusTime()}>+</div>
+        <div className="plus btn" onClick={() => plusTime()}>+</div>
         </div>
       </div>)
     }
   }
 
   render() {
+
+    const { active, time, toggleTime, plusTime, minusTime, activeTicket, stopTime } = this.props;
+
     return (
       <div className="pomodoroContainer">
         <h2>Timelog</h2>
         <div className="pomodoroOutline">
-          <div className="pomodoroCircle normalCursor">{this.timeFormatter(this.props.time)}</div>
+          <div className="pomodoroCircle normalCursor">{this.timeFormatter(time)}</div>
         </div>
-        {this.renderSettings()}
+        {this.renderSettings(active, toggleTime, plusTime, minusTime, stopTime)}
         <div className="activeTicketHeader">Active Ticket</div>
           <div className="activeSubTicket">
-    <span className="activeSubTicketText">{this.props.activeTicket}</span>
+    <span className="activeSubTicketText">{activeTicket}</span>
           </div>
       </div>
     )
