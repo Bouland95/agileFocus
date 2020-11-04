@@ -4,6 +4,7 @@ import Section from './Section.jsx';
 
 import sections from './data.js';
 import Pomodoro from './Pomodoro.jsx';
+import PieChartDemo from './Charts.jsx';
 
 var sectionsNames = ['Backlog', 'In-Progress', 'Complete'];
 
@@ -158,6 +159,8 @@ export class App extends React.Component {
               <div className="viewItem btn">Tickets</div>
               <div className="viewItem btn">Statistics</div>
           </div>
+
+          <PieChartDemo />
         </div>
       )
     }

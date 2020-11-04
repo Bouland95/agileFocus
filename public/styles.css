@@ -255,3 +255,10 @@ h2 {
   width: 250.19px;
   height: 38px;
 }
+
+
+/* ---------------- Charts ---------------- */
+.pieChartHeader {
+  text-align: center;
+  margin-top: 45px;
+}

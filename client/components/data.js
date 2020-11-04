@@ -2,7 +2,7 @@ export default
 {
   Backlog : {
     '151' : {
-      name: "Add Tickets functionality",
+      name: "Add tickets functionality",
       subTickets: [
         { name: "Make a single ticket expandable, the rest collapsed" },
         { name: "Add a new ticket or sub-ticket" },
@@ -20,7 +20,7 @@ export default
       ]
     },
     '153' : {
-      name: "Create some graphs based on logged time",
+      name: "Create graphs based on logged time",
       subTickets: [
         { name: "Add a pie chart" },
         { name: "Time spent per ticket" },
