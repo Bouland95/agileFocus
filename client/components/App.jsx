@@ -28,12 +28,10 @@ export class App extends React.Component {
   handleNewTicketSubmit(event) {
     event.preventDefault();
     const { newTicket, sections } = this.state;
-    // var newId = _.Uniq
     sections.Backlog[_.uniqueId()] = {
       name: newTicket,
       subTickets: []
     }
-    debugger;
     this.setState({
       sections: sections,
       newTicket: ''

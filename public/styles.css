@@ -16,6 +16,10 @@ h2 {
   cursor: default;
 }
 
+.flex {
+  display: flex;
+}
+
 /* ---------------- View Switcher ---------------- */
 
 .view {
@@ -132,6 +136,10 @@ h2 {
 }
 
 /* ---------------- Sub Tickets ---------------- */
+
+.addSubTicket {
+  margin-left: 10px;
+}
 
 .subTicket {
   margin-left: 5%;

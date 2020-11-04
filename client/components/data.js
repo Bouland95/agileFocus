@@ -18,6 +18,13 @@ export default
         { name: "Connect tickets with timer"},
         { name: "Limit pomodoro timer button to 'In-Progress' section"}
       ]
+    },
+    '153' : {
+      name: "Create some graphs based on logged time",
+      subTickets: [
+        { name: "Add a pie chart" },
+        { name: "Time spent per ticket" },
+      ]
     }
   }, 'In-Progress' : {
     // '151' : {

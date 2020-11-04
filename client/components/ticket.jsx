@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Subticket from './Subticket.jsx';
+import OutsideAlert from './OutsideAlert.jsx';
 
 class Ticket extends React.Component {
   constructor(props){
@@ -22,11 +23,10 @@ class Ticket extends React.Component {
     return (
     <div className="ticket">
 
-      {/* Uncomment to remove empty tickets */}
-      {/* {this.props.ticket.subTickets.length === 0
-      ? ''
-      :  */}
-      <div className="ticketName btn" onClick={() => this.toggleTicket()}>{this.props.ticket.name}</div>
+      <div className="flex">
+        <div className="ticketName btn" onClick={() => this.toggleTicket()}>{this.props.ticket.name}</div>
+        <div className="addSubTicket btn"><OutsideAlert><img src="add.png" height={35}/></OutsideAlert></div>
+      </div>
 
       {this.state.active
 
